@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writer Match for Dyslexic Students</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    h1, h2 {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    input[type="radio"] {
+        margin-right: 5px;
+    }
+    input[type="submit"] {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    #matchingWriters {
+        margin-top: 20px;
+    }
+    #matchingWriters ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    #matchingWriters li {
+        margin-bottom: 5px;
+    }
+    .no-match {
+        font-style: italic;
+        color: #888;
+    }
+</style>
+</head>
+<body>
+<h1>Find a Writer for Your Exam</h1>
+<form id="preferencesForm">
+    <h2>Select Your Preferred Genre:</h2>
+    <label><input type="radio" name="genre" value="fiction"> Fiction</label>
+    <label><input type="radio" name="genre" value="mystery"> Mystery</label>
+    <label><input type="radio" name="genre" value="science fiction"> Science Fiction</label>
+    <label><input type="radio" name="genre" value="fantasy"> Fantasy</label>
+    <label><input type="radio" name="genre" value="non-fiction"> Non-fiction</label>
+    <label><input type="radio" name="genre" value="biography"> Biography</label>
+    <h2>Select Your Preferred Writing Style:</h2>
+    <label><input type="radio" name="style" value="short stories"> Short Stories</label>
+    <label><input type="radio" name="style" value="novels"> Novels</label>
+    <label><input type="radio" name="style" value="essays"> Essays</label>
+    <input type="submit" value="Find Writer">
+</form>
+<div id="matchingWriters"></div>
+
+<script>
+document.getElementById("preferencesForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var genre = document.querySelector('input[name="genre"]:checked').value;
+    var style = document.querySelector('input[name="style"]:checked').value;
+
+    var matchingWriters = findMatchingWriters(genre, style);
+    displayMatchingWriters(matchingWriters);
+});
+
+function findMatchingWriters(genre, style) {
+    var writers = {
+        "Writer1": {genre: "fiction", style: "short stories"},
+        "Writer2": {genre: "mystery", style: "novels"},
+        "Writer3": {genre: "science fiction", style: "short stories"},
+        "Writer4": {genre: "fantasy", style: "novels"},
+        "Writer5": {genre: "non-fiction", style: "essays"},
+        "Writer6": {genre: "biography", style: "novels"},
+        // Add more writers and their preferences as needed
+    };
+
+    var matchingWriters = [];
+    for (var writer in writers) {
+        if (writers.hasOwnProperty(writer)) {
+            if (writers[writer].genre === genre && writers[writer].style === style) {
+                matchingWriters.push(writer);
+            }
+        }
+    }
+    return matchingWriters;
+}
+
+function displayMatchingWriters(writers) {
+    var matchingWritersDiv = document.getElementById("matchingWriters");
+    matchingWritersDiv.innerHTML = "";
+    var heading = document.createElement("h2");
+    heading.textContent = "Matching Writers";
+    matchingWritersDiv.appendChild(heading);
+    if (writers.length > 0) {
+        var ul = document.createElement("ul");
+        for (var i = 0; i < writers.length; i++) {
+            var li = document.createElement("li");
+            li.textContent = writers[i];
+            ul.appendChild(li);
+        }
+        matchingWritersDiv.appendChild(ul);
+    } else {
+        var noMatchMsg = document.createElement("p");
+        noMatchMsg.textContent = "No matching writers found.";
+        noMatchMsg.classList.add("no-match");
+        matchingWritersDiv.appendChild(noMatchMsg);
+    }
+}
+</script>
+</body>
+</html>
