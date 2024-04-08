@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .module {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 80%;
+            border: none;
+        }
+
+        .video-dropdown {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .video-dropdown select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="module">
+    <h1>Module 2</h1>
+    
+    <div class="video-dropdown">
+        <select id="videoSelect" onchange="showVideo()">
+            <option value="">Select Video</option>
+            <option value="Module3_Rapid_Automatic_Naming">Module 3: Rapid Automatic Naming</option>
+            <option value="Module3_Oral_Language_vs_Written_Expression">Module 3: Oral Language vs Written Expression</option>
+            <option value="Module3_Spelling">Module 3: Spelling</option>
+            <option value="Module4_Letter_Sounds">Module 4: Letter Sounds</option>
+            <option value="Module4_Syllables">Module 4: Syllables</option>
+            <option value="Module4_Fluency">Module 4: Fluency</option>
+            <option value="Module4_Comprehension">Module 4: Comprehension</option>
+            <option value="Module5_Spelling_Letter_Sounds">Module 5: Spelling Letter Sounds</option>
+            <option value="Module5_Spelling_Syllables">Module 5: Spelling Syllables</option>
+            <option value="Module5_Spelling_Fluency">Module 5: Spelling Fluency</option>
+        </select>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <!-- Video will be dynamically added here based on the selected video -->
+    </div>
+</div>
+
+<script>
+    function showVideo() {
+        var videoSelect = document.getElementById("videoSelect");
+        var selectedVideo = videoSelect.options[videoSelect.selectedIndex].value;
+        var videoContainer = document.getElementById("videoContainer");
+        videoContainer.innerHTML = ""; // Clear previous video
+
+        if (selectedVideo === "Module3_Rapid_Automatic_Naming") {
+            // Add Module 3: Rapid Automatic Naming video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 3 Spotting Dyslexia_ 3 C Rapid Automatic Naming.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module3_Oral_Language_vs_Written_Expression") {
+            // Add Module 3: Oral Language vs Written Expression video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 3 Spotting Dyslexia_ 3 D Oral Language vs  Written Expression (1).mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module3_Spelling") {
+            // Add Module 3: Spelling video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 3 Spotting Dyslexia_ 3 E Spelling.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module4_Letter_Sounds") {
+            // Add Module 4: Letter Sounds video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 4 Reading_ 4 A Letter Sounds (1).mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module4_Syllables") {
+            // Add Module 4: Syllables video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 4 Reading_ 4 B Syllables.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module4_Fluency") {
+            // Add Module 4: Fluency video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 4 Reading_ 4 C Fluency.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module4_Comprehension") {
+            // Add Module 4: Comprehension video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 4 Reading_ 4 D Comprehension.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module5_Spelling_Letter_Sounds") {
+            // Add Module 5: Spelling Letter Sounds video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 5 Spelling. 5 A Spelling Letter Sounds.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module5_Spelling_Syllables") {
+            // Add Module 5: Spelling Syllables video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 5 Spelling_ 5 B Syllables.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module5_Spelling_Fluency") {
+            // Add Module 5: Spelling Fluency video
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 5 Spelling_ 5 C Fluency.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        }
+        // Add more conditions for other videos
+    }
+</script>
+
+</body>
+</html>

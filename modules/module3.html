@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .module {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 80%;
+            border: none;
+        }
+
+        .video-dropdown {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .video-dropdown select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="module">
+    <h2>Module 3</h2>
+    
+    <div class="video-dropdown">
+        <select id="videoSelect" onchange="showVideo()">
+            <option value="">Select Video</option>
+            <option value="Module6_Prewriting">Module 6: Prewriting</option>
+            <option value="Module6_Drafting">Module 6: Drafting</option>
+            <option value="Module6_Writing_Editing">Module 6: Writing Editing</option>
+            <option value="Module6_Assessing">Module 6: Assessing</option>
+            <option value="Module7_Memory_Organisation_1">Module 7: Memory Organisation (1)</option>
+            <option value="Module7_Memory_Organisation_2">Module 7: Memory Organisation (2)</option>
+            <option value="Module7_Memory_Organisation_3">Module 7: Memory Organisation (3)</option>
+            <option value="Module7_Memory_Organisation">Module 7: Memory Organisation</option>
+            <option value="Module8_Math_Math_is_a_Language">Module 8: Math - Math is a Language</option>
+            <option value="Module8_Math_Making_Math_Connections_Explicit">Module 8: Math - Making Math Connections Explicit</option>
+            <option value="Module8_Math_Math_Facts">Module 8: Math - Math Facts</option>
+            <option value="Module9_Technology_Organisation">Module 9: Technology - Organisation</option>
+            <option value="Module9_Technology_Reading">Module 9: Technology - Reading</option>
+            <option value="Module9_Technology_Writing">Module 9: Technology - Writing</option>
+            <option value="Module9_Technology_Math">Module 9: Technology - Math</option>
+        </select>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <!-- Video will be dynamically added here based on the selected video -->
+    </div>
+</div>
+
+<script>
+    function showVideo() {
+        var videoSelect = document.getElementById("videoSelect");
+        var selectedVideo = videoSelect.options[videoSelect.selectedIndex].value;
+        var videoContainer = document.getElementById("videoContainer");
+        videoContainer.innerHTML = ""; // Clear previous video
+
+        if (selectedVideo === "Module6_Prewriting") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 6 Writing_ 6 A Prewriting.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module6_Drafting") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 6 Writing_ 6 B Drafting.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module6_Writing_Editing") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 6 Writing_ 6 C Writing Editing.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module6_Assessing") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 6 Writing_ 6 D Assessing.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module7_Memory_Organisation_1") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 7 Memory Organisation  (1).mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module7_Memory_Organisation_2") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 7 Memory Organisation  (2).mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module7_Memory_Organisation_3") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 7 Memory Organisation  (3).mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module7_Memory_Organisation") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 7 Memory Organisation .mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module8_Math_Math_is_a_Language") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 8 Math_ 8 A Math is a Language.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module8_Math_Making_Math_Connections_Explicit") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 8 Math_ 8 B Making Math Connections Explicit.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module8_Math_Math_Facts") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 8 Math_ 8 C Math Facts.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module9_Technology_Organisation") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 9 Technology_ A Organisation .mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module9_Technology_Reading") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 9 Technology_ B Reading.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module9_Technology_Writing") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 9 Technology_ C Writing.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "Module9_Technology_Math") {
+            videoContainer.innerHTML = `
+                <iframe class="embed-video" src="Module 9 Technology_ D Math.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        }
+    }
+</script>
+
+</body>
+</html>

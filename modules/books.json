@@ -1,0 +1,65 @@
+{
+    "modules": [
+      {
+        "name": "Reading Module",
+        "description": "Improve your reading skills with a variety of resources including books, articles, and exercises.",
+        "image": "path/to/reading_image.jpg",
+        "resources": [
+          {
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "type": "Book"
+          },
+          {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "type": "Book"
+          },
+          {
+            "title": "Reading Comprehension Exercises",
+            "type": "Exercise"
+          }
+        ]
+      },
+      {
+        "name": "Listening Module",
+        "description": "Enhance your listening skills through various audio materials, podcasts, and activities.",
+        "image": "path/to/listening_image.jpg",
+        "resources": [
+          {
+            "title": "TED Talks",
+            "type": "Podcast"
+          },
+          {
+            "title": "BBC Learning English",
+            "type": "Podcast"
+          },
+          {
+            "title": "Listening Comprehension Activities",
+            "type": "Activity"
+          }
+        ]
+      },
+      {
+        "name": "Writing Module",
+        "description": "Develop your writing skills with guides, exercises, and feedback from experienced writers.",
+        "image": "path/to/writing_image.jpg",
+        "resources": [
+          {
+            "title": "On Writing: A Memoir of the Craft",
+            "author": "Stephen King",
+            "type": "Book"
+          },
+          {
+            "title": "Grammarly",
+            "type": "Tool"
+          },
+          {
+            "title": "Writing Prompts",
+            "type": "Exercise"
+          }
+        ]
+      }
+    ]
+  }
+  

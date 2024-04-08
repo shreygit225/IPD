@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .module {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .lecture-dropdown {
+            text-align: center;
+        }
+
+        .lecture-dropdown select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 80%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="module">
+    <h1>Module 1</h1>
+    
+    <div class="lecture-dropdown">
+        <select id="lectureSelect" onchange="showVideo()">
+            <option value="">Select Lecture</option>
+            <option value="video1">Video 1</option>
+            <option value="video2">Video 2</option>
+            <option value="video3">Video 3</option>
+            <option value="video4">Video 4</option>
+            <option value="video5">Video 5</option>
+            <!-- Add more videos -->
+        </select>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <!-- Video will be dynamically added here based on the selected video -->
+    </div>
+</div>
+
+<script>
+    function showVideo() {
+        var lectureSelect = document.getElementById("lectureSelect");
+        var selectedVideo = lectureSelect.options[lectureSelect.selectedIndex].value;
+        var videoContainer = document.getElementById("videoContainer");
+        videoContainer.innerHTML = ""; // Clear previous video
+
+        if (selectedVideo === "video1") {
+            // Add video 1
+            videoContainer.innerHTML = `
+                <iframe src="Module 0 Introduction.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "video2") {
+            // Add video 2
+            videoContainer.innerHTML = `
+                <iframe src="Module 1 Dyslexic Strengths_ 1 A Identifying Dyslexic Strengths.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "video3") {
+            // Add video 3
+            videoContainer.innerHTML = `
+                <iframe src="Module 1 Dyslexic Strengths_ 1 B Teaching to Dyslexic Strengths.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "video4") {
+            // Add video 4
+            videoContainer.innerHTML = `
+                <iframe src="Module 1 Dyslexic Strengths_ 1 C Assessing Using Dyslexic Strenghts.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        } else if (selectedVideo === "video5") {
+            // Add video 5
+            videoContainer.innerHTML = `
+                <iframe src="Module 2 Classroom Instruction_  2 B2  Student Advocacy.mp4" frameborder="0" allowfullscreen></iframe>
+            `;
+        }
+        // Add more conditions for other videos
+    }
+</script>
+
+</body>
+</html>
