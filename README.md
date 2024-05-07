@@ -12,5 +12,6 @@ I have seamlessly integrate frontend, backend, database, and ML-driven data anal
 
 Join us in exploring Dyslexia Mindscape, where technology meets compassion to create a brighter future for individuals with dyslexia. 🌐 
 
-Link of Website:
-https://lnkd.in/dTwhVgYX
+Link of Website: https://shreygit225.github.io/IPD/
+Video Link: https://youtu.be/y0vAeZMgHTM
+
